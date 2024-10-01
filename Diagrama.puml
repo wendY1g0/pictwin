@@ -1,0 +1,32 @@
+@startuml
+skin rose
+hide empty method
+left to right direction
+entity Persona{
+*correo electrónico
+ *contraseña
+*numero de strike
+*bloqueado
+*fecha de bloqueo
+}
+entity Pic{
+*latitud
+*longitud
+*numero de reportes
+*fecha
+*foto
+*bloqueado
+*numero de vistas
+}
+entity picTwin{
+* fecha vencimiento
+* vencido
+* reportado
+}
+
+
+Pic "*"--"1" Persona:< toma
+picTwin "*"--"1" Pic:> mi
+picTwin "*"--"1" Pic:> twin
+picTwin "*"--"1" Persona:< posee
+@enduml
